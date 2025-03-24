@@ -21,9 +21,13 @@ public class Test01 {
         submitButton.click();
         WebElement logOut = driver.findElement(By.linkText("Logout"));
         Assert.assertTrue(logOut.isDisplayed());
-//        WebElement logOutButton = driver.findElement(By.tagName("logout"));
-//        logOutButton.click();
-        sleep(5000);
+        sleep(3000);
+        logOut.click();
+        sleep(3000);
+        WebElement flashMassage = driver.findElement(By.id("flash"));
+        String messageText = flashMassage.getText();
+        System.out.println("messageText = " + messageText);
         driver.quit();
+
     }
 }
