@@ -25,21 +25,20 @@ public class TestCaseSDT21R108 {
         WebElement closeSignUp = driver.findElement(By.xpath("//*[@class='a-close-newsletter']"));
         closeSignUp.click();
 
-        //Testrun
+        //TestRun
         WebElement myAccount = driver.findElement(By.cssSelector("a[data-toggle='dropdown']"));
         myAccount.click();
         WebElement login = driver.findElement(By.id("pt-login-link"));
         login.click();
 
-        sleep(2000);
+        sleep(500);
         WebElement submitLogin = driver.findElement(By.cssSelector("[onclick*='ptlogin.loginAction']"));//здесь тест падал, добавлено время ожидания на появление кнопки Логин
         submitLogin.click();
 
-        sleep(3000);
+        sleep(500);
         WebElement alertMessage = driver.findElement(By.xpath("//*[@class='alert alert-danger']"));//здесь тоже для повления элемента в браузере нужно время
         String messageText = alertMessage.getText();
         System.out.println("messageText = " + messageText);
         driver.quit();
-
     }
 }
